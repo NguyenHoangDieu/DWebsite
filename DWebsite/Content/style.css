@@ -9,7 +9,7 @@
   padding: 20px;
 }
 form{
-  min-width: 40%;
+  min-width: 100%;
   z-index: 100;
   position: relative;
   top: 0;
