@@ -1,0 +1,14 @@
+cache
+.vscode
+.vs
+bin
+obj
+*.suo
+*.user
+bin
+obj
+packages
+**/bin/*
+**/obj/*
+**/.vs/*
+Logs
