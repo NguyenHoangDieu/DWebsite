@@ -1,6 +1,4 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿@model DWebsite.Models.LoginModel
 
         <div class="night">
         </div>
@@ -10,19 +8,41 @@
             <div id="stars3"></div>
         </div>
         <div class="login">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <form class="form-body">
+                @Html.EditorFor(model => model.FullName, new
+                {
+                    htmlAttributes = new
+                    {
+                        @class = "form-control mb-4",
+                        @style = "max-width: 100% !important",
+                        @type = "text",
+                        @placeholder = "Nhập họ và tên..."
+                    }
+                })
+                @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+
+
+                @Html.EditorFor(model => model.Password, new
+                {
+                    htmlAttributes = new
+                                    {
+                        @class = "form-control mb-4",
+                        @style = "max-width: 100% !important",
+                        @type = "password",
+                        @placeholder = "Nhập sinh nhật..."
+                    }
+                })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+
                 <div class="d-flex" style="justify-content: center;">
-                    <div>
-                        <input type="text" class="form-control mb-4" id="username" placeholder="Nhập họ và tên...">
-         
-                        <input type="password" class="form-control mb-3" id="password" placeholder="Nhập sinh nhật...">
-                    </div>
-                </div>
-             
-                <div class="d-flex" style="justify-content: center;">
-                    <button type="submit" class="btn-custom">Đăng nhập</button>
+                    <button type="submit" value="Index" class="btn-custom">Đăng nhập</button>
                 </div>
             </form>
+            }
         </div>
         <div class="flowers">
             <div class="flower flower--1">
